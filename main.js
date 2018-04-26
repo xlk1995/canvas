@@ -38,14 +38,34 @@ function listenToUser(canvas){
     var lastPoint={x:undefined,y:undefined}
     //点击鼠标
     if (document.documentElement.ontouchstart !==undefined){
-        ontouchstart = function(){
-            console.log('我开始摸你了哦')
+        ontouchstart = function(aaa){
+            var x=aaa.touches[0].clientX
+            var y=aaa.touches[0].clientY
+            using = true
+            if(eraserEnable){
+                context.clearRect(x,y,10,10)
+            }
+            else{
+                lastPoint = {x:x,y:y}
+            }
         }
-        ontouchmove = function(){
-            console.log('我边摸边动')
+        ontouchmove = function(aaa){
+            var x=aaa.touches[0].clientX
+            var y=aaa.touches[0].clientY
+            if(!using){return}
+            else{
+                if(eraserEnable){
+                    context.clearRect(x-5,y-5,10,10)     
+                }
+                else{
+                    var newPoint = {x:x,y:y}
+                    drawLine(lastPoint.x,lastPoint.y,newPoint.x,newPoint.y)
+                    lastPoint = newPoint
+                }            
+            }
         }
         ontouchend = function(){
-            console.log('摸完了，舒服吗')
+            using = false
         }
     }else{
         canvas.onmousedown = function(aaa){
