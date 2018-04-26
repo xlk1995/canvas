@@ -1,5 +1,6 @@
 var yyy = document.getElementById('xxx');
 var context = yyy.getContext('2d');
+var lineWidth=5
 
 autoSetCanvasSzize(yyy)
 
@@ -35,6 +36,17 @@ green.onclick =function(){
     green.classList.add('active')
     blue.classList.remove('active')
     red.classList.remove('active')
+}
+
+thin.onclick=function(){
+    lineWidth = 5;
+}
+thick.onclick = function(){
+    lineWidth = 10;
+}
+
+clear.onclick =function(){
+    context.clearRect(0, 0, yyy.width, yyy.height);
 }
 /******/
 function autoSetCanvasSzize (canvas){
@@ -131,7 +143,7 @@ function listenToUser(canvas){
     function drawLine(x1,y1,x2,y2){
         context.beginPath()
         context.moveTo(x1,y1)   //起点
-        context.lineWidth = 5   //线的宽度
+        context.lineWidth = lineWidth   //线的宽度
         context.lineTo(x2,y2)
         context.stroke()
         context.closePath()

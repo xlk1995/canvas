@@ -56,3 +56,21 @@ body{
     transform: scale(1.2);
    
 }
+.size{
+    position: fixed;
+    border: 1px soild red;
+    top:40px;
+    right: 20px;
+}
+.size >li{
+    margin: 10px 0;
+    height: 0;
+    width :40px;
+}
+
+.size .thin{
+    border-top:5px solid black;
+}
+.size .thick{
+    border-top:10px solid black;
+}
