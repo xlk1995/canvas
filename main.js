@@ -1,6 +1,6 @@
-document.body.ontouchstart = function(ttt){
-    ttt.preventDefault()
-}
+// document.body.ontouchstart = function(ttt){
+//     ttt.preventDefault()
+// }
 
 var yyy = document.getElementById('xxx');
 var context = yyy.getContext('2d');
