@@ -1,3 +1,7 @@
+document.body.ontouchstart = function(ttt){
+    ttt.preventDefault()
+}
+
 var yyy = document.getElementById('xxx');
 var context = yyy.getContext('2d');
 var lineWidth=5
@@ -54,7 +58,8 @@ download.onclick = function(){
     var a = document.createElement('a')
     document.body.appendChild(a)
     a.href = url
-    a.download = 'xxxx'
+    a.download = '我的画儿'
+    a.target = '_blank'
     a.click()
 }
 
