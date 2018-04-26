@@ -8,13 +8,33 @@ listenToUser(yyy)
 //橡皮擦
 
 var eraserEnable  =  false
-eraser.onclick = function(){
-    eraserEnable = true
-    actions.className = 'actions x'
+pen.onclick = function(){
+    eraserEnable  =  false
+    pen.classList.add('active')
+    eraser.classList.remove('active')
 }
-brush.onclick = function(){
-    eraserEnable = false
-    actions.className = 'actions'
+eraser.onclick = function(){
+    eraserEnable = true 
+    eraser.classList.add('active') 
+    pen.classList.remove('active')      
+}
+red.onclick =function(){
+    context.strokeStyle = 'red'
+    red.classList.add('active')
+    blue.classList.remove('active')
+    green.classList.remove('active')
+}
+blue.onclick =function(){
+    context.strokeStyle = 'blue'
+    blue.classList.add('active')
+    red.classList.remove('active')
+    green.classList.remove('active')
+}
+green.onclick =function(){
+    context.strokeStyle = 'green'
+    green.classList.add('active')
+    blue.classList.remove('active')
+    red.classList.remove('active')
 }
 /******/
 function autoSetCanvasSzize (canvas){

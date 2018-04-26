@@ -8,10 +8,20 @@
 <body>
     <canvas id="xxx">
     </canvas>
-    <div class="actions" id ="actions">
-        <button id="eraser">橡皮擦</button>
-        <button id="brush">画笔</button>
+    <div class="actions " id ="actions">
+        <svg id=pen class="icon active" aria-hidden="true">
+            <use xlink:href="#icon-pen"></use>
+        </svg>
+        <svg id=eraser class="icon" aria-hidden="true">
+            <use xlink:href="#icon-eraser"></use>
+        </svg>       
+        <ol class="colors">
+            <li class="red active" id=red ></li>
+            <li class="green" id=green></li>
+            <li class="blue" id=blue></li>
+        </ol>
     </div>
     <script src="./main.js"></script>
+    <script src="//at.alicdn.com/t/font_644021_pllv3fpoqhb8olxr.js"></script>
 </body>
 </html>
